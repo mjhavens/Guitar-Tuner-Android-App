@@ -1,5 +1,10 @@
 package com.isuacm.tuner2;
 
+/*
+ * This class will play a note on a guitar so that you can tune your guitar correctly.
+ * 
+ * @author - MJ Havens <me@mjhavens.com>
+ */
 import java.util.HashMap;
 
 import android.app.Activity;
@@ -16,20 +21,20 @@ import android.widget.Button;
 public class MainActivity extends Activity
 {
 
-	private Button					playEButton;
+	private Button			playEButton;
 	private Button			playAButton;
 	private Button			playDButton;
 	private Button			playGButton;
 	private Button			playBButton;
 	private Button			playESmallButton;
-	private SoundPool				soundpool;
+	private SoundPool		soundpool;
 	private SparseIntArray	soundsmap;
-	private int						SixthStringE		= 6;
-	private int						FifthStringA		= 5;
-	private int						FourthStringD		= 4;
-	private int						ThirdStringG		= 3;
-	private int						SecondStringB		= 2;
-	private int						FirstStringESmall	= 1;
+	private int				SixthStringE		= 6;
+	private int				FifthStringA		= 5;
+	private int				FourthStringD		= 4;
+	private int				ThirdStringG		= 3;
+	private int				SecondStringB		= 2;
+	private int				FirstStringESmall	= 1;
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState)
@@ -59,7 +64,6 @@ public class MainActivity extends Activity
 		soundsmap.put(FirstStringESmall,
 				soundpool.load(this, R.raw.first_string_e, 1));
 
-
 		playEButton.setOnClickListener(PlayNoteListener);
 		playAButton.setOnClickListener(PlayNoteListener);
 		playDButton.setOnClickListener(PlayNoteListener);
@@ -69,6 +73,11 @@ public class MainActivity extends Activity
 
 	}
 
+	/**
+	 * Gets called whenever a note is clicked on. It plays the sound based on the note.
+	 * 
+	 * @param sound - The note being played.
+	 */
 	public void playSound(int sound)
 	{
 		AudioManager mgr = (AudioManager) getSystemService(Context.AUDIO_SERVICE);
@@ -81,6 +90,9 @@ public class MainActivity extends Activity
 		soundpool.play(soundsmap.get(sound), volume, volume, 1, 0, 1);
 	}
 
+	/**
+	 * A click listener that determines which note was clicked.
+	 */
 	private OnClickListener	PlayNoteListener	= new OnClickListener()
 												{
 
@@ -111,6 +123,5 @@ public class MainActivity extends Activity
 
 													};
 												};
-
 
 }
