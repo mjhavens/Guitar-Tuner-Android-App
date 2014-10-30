@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">com.isuacm.tuner</string>
+    <string name="action_settings">Settings</string>
+    <string name="tuner">Type in the Frequency:</string>
+    <string name="hertz">Hz</string>
+    <string name="playE">E</string>
+    <string name="playA">A</string>
+        <string name="playD">D</string>
+        <string name="playG">G</string>
+        <string name="playB">B</string>
+        
+        <string name="playESmall">E</string>
+        
+    <string name="stopButtonText">Stop</string>
+    
+</resources>
